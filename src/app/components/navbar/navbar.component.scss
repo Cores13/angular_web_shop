@@ -48,10 +48,27 @@ nav {
       padding: 0 15px;
     }
 
-    .navbar-language {
+    .navbar-language-select {
       text-decoration: none;
       color: $primary_text_color;
-      padding: 0 15px;
+      background: none;
+      border: none;
+      outline: none;
+      margin: 0 15px;
+      font-weight: 500;
+      font-size: 18px;
+
+      .navbar-language {
+        font-weight: 500;
+        text-decoration: none;
+        color: $primary_text_color;
+        padding: 0 15px;
+
+        .navbar-language-flag {
+          width: 30px;
+          height: 30px;
+        }
+      }
     }
   }
 }

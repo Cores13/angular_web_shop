@@ -1,6 +1,7 @@
 <nav>
   <div class="navbar-left">
-    <img src="assets/logo.png" alt="Web Shop Logo">
+    <!-- <img src="assets/logo.png" alt="Web Shop Logo"> -->
+    WEB SHOP
   </div>
   <div class="navbar-center">
     <a class="navbar-link active" href="">{{'Navbar.Home' | translate}}</a>
@@ -11,9 +12,9 @@
   <div class="navbar-right">
     <a class="navbar-link" href="">Search</a>
     <a class="navbar-link" href="cart">Cart</a>
-    <select (change)="setLanguage($event.target)">
-      <option class="navbar-language" value="en" selected>EN</option>
-      <option class="navbar-language" value="ba">BA</option>
+    <select class="navbar-language-select" (change)="setLanguage($event.target)">
+      <option class="navbar-language" value="en" selected><img class="navbar-language-flag" src="assets/images/flags/en.png" alt="EN Flag"/>EN</option>
+      <option class="navbar-language" value="ba"><img class="navbar-language-flag" src="assets/images/flags/ba.png" alt="BA Flag"/>BA</option>
     </select>
   </div>
 </nav>
