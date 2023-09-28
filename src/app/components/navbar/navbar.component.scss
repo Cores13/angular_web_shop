@@ -1,0 +1,19 @@
+nav {
+  display: flex;
+  flex-direction: row;
+
+  .navbar-left {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .navbar-center {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .navbar-right {
+    display: flex;
+    flex-direction: row;
+  }
+}
