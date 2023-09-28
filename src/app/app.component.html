@@ -1,2 +1,4 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<app-navbar (languageChangeEvent)="onLanguageChange($event)"></app-navbar>
+<div class="content-container">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,10 @@
+{
+  "Navbar": {
+    "Home": "Home",
+    "Products": "Products",
+    "About": "About",
+    "Contact": "Contact",
+    "Cart": "Cart",
+    "Search": "Pretraga"
+  }
+}
