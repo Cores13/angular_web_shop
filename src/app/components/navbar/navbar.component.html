@@ -10,11 +10,20 @@
     <a class="navbar-link" href="">{{'Navbar.Contact' | translate}}</a>
   </div>
   <div class="navbar-right">
-    <a class="navbar-link" href="">Search</a>
-    <a class="navbar-link" href="cart">Cart</a>
+    <div class="navbar-search">
+      <span><img class="search-icon" src="assets/images/search.png" alt="Search icon"/></span>
+      <input class="search-input" type="text" [placeholder]="'Navbar.Search' | translate">
+    </div>
+    <a class="navbar-link" href="cart"><img class="navbar-icon" src="assets/images/cart.png" alt="Cart icon"/></a>
     <select class="navbar-language-select" (change)="setLanguage($event.target)">
-      <option class="navbar-language" value="en" selected><img class="navbar-language-flag" src="assets/images/flags/en.png" alt="EN Flag"/>EN</option>
-      <option class="navbar-language" value="ba"><img class="navbar-language-flag" src="assets/images/flags/ba.png" alt="BA Flag"/>BA</option>
+      <option class="navbar-language" value="en" selected>
+        <img class="navbar-language-flag" src="assets/images/flags/en.png" alt="EN Flag"/>
+        EN
+      </option>
+      <option class="navbar-language" value="ba">
+        <img class="navbar-language-flag" src="assets/images/flags/ba.png" alt="BA Flag"/>
+        BA
+      </option>
     </select>
   </div>
 </nav>

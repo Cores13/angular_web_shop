@@ -46,6 +46,32 @@ nav {
       text-decoration: none;
       color: $primary_text_color;
       padding: 0 15px;
+
+    }
+    .navbar-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .navbar-search {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      border: 1px solid lightgray;
+      padding: 5px;
+      border-radius: 8px;
+
+      .search-input {
+        border: none;
+        outline: none;
+        background: none;
+        padding: 5px;
+      }
+      .search-icon {
+        width: 15px;
+        height: 15px;
+      }
     }
 
     .navbar-language-select {

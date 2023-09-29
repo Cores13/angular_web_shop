@@ -10,6 +10,9 @@ import { CartComponent } from './pages/cart/cart.component';
 import { HomeComponent } from './pages/home/home.component';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+// STORE
+import { StoreModule, provideStore, provideState } from '@ngrx/store';
+import { cartReducer } from './store/cart/cart.reducer';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -42,9 +45,12 @@ export function createTranslateLoader(http: HttpClient) {
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
       }
-    })
+    }),
+    StoreModule.forRoot({ cart: cartReducer })
   ],
-  providers: [],
+  providers: [
+    provideStore({cart: cartReducer}),
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
