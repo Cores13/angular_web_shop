@@ -1,11 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { Cart } from 'src/app/interfaces/store/cart';
 import { AppState } from 'src/app/store/app.state';
-import { selectCart, selectCartItems, selectNumberOfItems } from 'src/app/store/cart/cart.selectors';
-import { addItem, loadCart, removeItem } from 'src/app/store/cart/cart.actions';
-import { CartItem } from 'src/app/interfaces/store/cart-item';
+import { selectNumberOfItems } from 'src/app/store/cart/cart.selectors';
+import { loadCart, } from 'src/app/store/cart/cart.actions';
 
 @Component({
   selector: 'app-navbar',
