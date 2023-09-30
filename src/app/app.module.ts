@@ -11,8 +11,12 @@ import { HomeComponent } from './pages/home/home.component';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 // STORE
-import { StoreModule, provideStore, provideState } from '@ngrx/store';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { cartReducer } from './store/cart/cart.reducer';
+import { CartEffects } from './store/cart/cart.effects';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { IonicStorageModule } from '@ionic/storage-angular';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -20,9 +24,9 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 // FOR AoT
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
+// export function createTranslateLoader(http: HttpClient) {
+//     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+// }
 
 @NgModule({
   declarations: [
@@ -36,6 +40,8 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
@@ -46,11 +52,10 @@ export function createTranslateLoader(http: HttpClient) {
           deps: [HttpClient]
       }
     }),
-    StoreModule.forRoot({ cart: cartReducer })
+    StoreModule.forRoot({ cart: cartReducer }),
+    EffectsModule.forRoot([CartEffects])
   ],
-  providers: [
-    provideStore({cart: cartReducer}),
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
