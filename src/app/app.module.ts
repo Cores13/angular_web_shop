@@ -17,6 +17,7 @@ import { cartReducer } from './store/cart/cart.reducer';
 import { CartEffects } from './store/cart/cart.effects';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage-angular';
+import { InfiniteScrollComponent } from './components/infinite-scroll/infinite-scroll.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -34,7 +35,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     NavbarComponent,
     ProductCardComponent,
     CartComponent,
-    HomeComponent
+    HomeComponent,
+    InfiniteScrollComponent
   ],
   imports: [
     BrowserModule,
