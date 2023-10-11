@@ -15,15 +15,10 @@ const routes: Routes = [
   // {path: 'cart', component: CartComponent},
 
   {
-    path: '',
+    path: '', component: UserLayoutComponent,
     children: [
-      {
-        path: '', component: UserLayoutComponent,
-        children: [
-          {path: '', component: HomeComponent},
-          {path: 'cart', component: CartComponent},
-        ]
-      },
+      {path: '', component: HomeComponent},
+      {path: 'cart', component: CartComponent},
     ]
   },
 
