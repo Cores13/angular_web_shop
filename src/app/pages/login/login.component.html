@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="form-wrapper">
+    <h2>Login</h2>
+    <form action="" method="POST" class="form" [formGroup]="loginForm">
+      <!-- Error message -->
+      <small class="validation-message"
+        *ngIf="loginForm.controls['Email'].dirty && loginForm.hasError('required', 'Email')">
+        *Email is required
+      </small>
+      <!-- Input -->
+      <div class="input-wrapper" [class.error]="loginForm.controls['Email'].dirty && loginForm.hasError('required', 'Email')">
+        <span class="fa fa-envelope input-icon"></span>
+        <input formControlName="Email" type="email" class="form-input" name="Email" placeholder="Email" required>
+      </div>
+
+      <!-- Error message -->
+      <small class="validation-message"
+        *ngIf="loginForm.controls['Password'].dirty && loginForm.hasError('required', 'Password')">
+        *Password is required
+      </small>
+      <!-- Input -->
+      <div class="input-wrapper" [class.error]="loginForm.controls['Password'].dirty && loginForm.hasError('required', 'Password')">
+        <span class="fa fa-lock input-icon"></span>
+        <input formControlName="Password" [type]="type" type="text" class="form-input" name="Password" placeholder="Password" required>
+        <span (click)="togglePasswordVisibility()" class="fa {{eyeIcon}}"></span>
+      </div>
+
+      <p class="link" (click)="toggleModal()">Forgot your password?</p>
+
+      <button
+        (click)="onSubmit()"
+        type="submit"
+        class="btn-primary">
+        Login
+      </button>
+
+      <!-- <div class="forgot-password-text">
+        <span class="forgot-password-text">You don't have an account? </span><a class="link" href="/admin/register">Register</a>
+      </div> -->
+    </form>
+  </div>
+
+  <!-- Forgot password modal -->
+  <div class="modal-wrapper" *ngIf="isModalVisible">
+    <div class="modal">
+      <h3 class="modal-close-btn" (click)="toggleModal()">x</h3>
+      <h2>Forgot your password</h2>
+      <p>Please enter the email of your account</p>
+
+      <form action="">
+        <!-- Error message -->
+        <small class="validation-message"
+          *ngIf="!resetPasswordEmail">
+          *Email is required
+        </small>
+        <small class="validation-message"
+          *ngIf="!isValidEmail && resetPasswordEmail">
+          *Email is invalid
+        </small>
+        <!-- Input -->
+        <div class="input-wrapper" [class.error]="loginForm.controls['Email'].dirty && loginForm.hasError('required', 'Email')">
+          <span class="fa fa-envelope input-icon"></span>
+          <input [(ngModel)]="resetPasswordEmail" (ngModelChange)="validateEmail($event)" type="email" class="form-input" name="Email" placeholder="Email" required>
+        </div>
+
+        <button
+          (click)="sendResetPasswordMail()"
+          type="button"
+          class="btn-primary">
+          Reset
+        </button>
+      </form>
+    </div>
+  </div>
+
+</div>

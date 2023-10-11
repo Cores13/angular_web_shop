@@ -1,0 +1,110 @@
+<div class="container">
+  <div class="form-wrapper">
+    <h2>Register</h2>
+    <form action="" method="POST" class="form" [formGroup]="registerForm">
+      <!-- Error message -->
+      <small class="validation-message"
+        *ngIf="registerForm.controls['FirstName'].dirty && registerForm.hasError('required', 'FirstName')">
+        *First name is required
+      </small>
+      <!-- Input -->
+      <div class="input-wrapper" [class.error]="registerForm.controls['FirstName'].dirty && registerForm.hasError('required', 'FirstName')">
+        <span class="fa fa-user input-icon"></span>
+        <input formControlName="FirstName" type="text" class="form-input" name="FirstName" placeholder="First name" required>
+      </div>
+
+      <!-- Error message -->
+      <small class="validation-message"
+        *ngIf="registerForm.controls['LastName'].dirty && registerForm.hasError('required', 'LastName')">
+        *Last name is required
+      </small>
+      <!-- Input -->
+      <div class="input-wrapper" [class.error]="registerForm.controls['LastName'].dirty && registerForm.hasError('required', 'LastName')">
+        <span class="fa fa-user input-icon"></span>
+        <input formControlName="LastName" type="text" class="form-input" name="LastName" placeholder="Last name" required>
+      </div>
+
+      <!-- Error message -->
+      <small class="validation-message"
+        *ngIf="registerForm.controls['Username'].dirty && registerForm.hasError('required', 'Username')">
+        *Username is required
+      </small>
+      <small class="validation-message"
+        style="white-space:pre-wrap;"
+        *ngIf="usernameValidationMessage"
+        [innerHTML]="usernameValidationMessage">
+      </small>
+      <!-- Input -->
+      <div class="input-wrapper" [class.error]="registerForm.controls['Username'].dirty && registerForm.hasError('required', 'Username') || usernameValidationMessage">
+        <span class="fa fa-envelope input-icon"></span>
+        <input (change)="resetUsernameValidation()"  formControlName="Username" type="text" class="form-input" name="Username" placeholder="Username" required>
+      </div>
+
+      <!-- Error message -->
+      <small class="validation-message"
+        *ngIf="registerForm.controls['Email'].dirty && registerForm.hasError('required', 'Email')">
+        *Email is required
+      </small>
+      <small class="validation-message"
+        style="white-space:pre-wrap;"
+        *ngIf="emailValidationMessage"
+        [innerHTML]="emailValidationMessage">
+      </small>
+      <!-- Input -->
+      <div class="input-wrapper" [class.error]="registerForm.controls['Email'].dirty && registerForm.hasError('required', 'Email') || emailValidationMessage">
+        <span class="fa fa-envelope input-icon"></span>
+        <input (change)="resetEmailValidation()"  formControlName="Email" type="email" class="form-input" name="Email" placeholder="Email" required>
+      </div>
+
+      <!-- Error message -->
+      <small class="validation-message"
+        *ngIf="registerForm.controls['Password'].dirty && registerForm.hasError('required', 'Password')">
+        *Password is required
+      </small>
+      <small class="validation-message"
+        style="white-space:pre-wrap;"
+        *ngIf="passwordValidationMessage"
+        [innerHTML]="passwordValidationMessage">
+      </small>
+      <!-- Input -->
+      <div class="input-wrapper" [class.error]="registerForm.controls['Password'].dirty && registerForm.hasError('required', 'Password') || passwordValidationMessage">
+        <span class="fa fa-lock input-icon"></span>
+        <input (change)="resetPasswordValidation()" formControlName="Password" [type]="type" type="text" class="form-input" name="Password" placeholder="Password" required>
+        <span (click)="togglePasswordVisibility()" class="fa {{eyeIcon}}"></span>
+      </div>
+
+      <!-- Error message -->
+      <small class="validation-message"
+        *ngIf="registerForm.controls['PasswordConfirm'].dirty && registerForm.hasError('required', 'PasswordConfirm')">
+        *Password confirmation is required
+      </small>
+      <!-- Input -->
+      <div class="input-wrapper" [class.error]="registerForm.controls['PasswordConfirm'].dirty && registerForm.hasError('required', 'PasswordConfirm')">
+        <span class="fa fa-lock input-icon"></span>
+        <input formControlName="PasswordConfirm" [type]="typeConfirm" type="text" class="form-input" name="PasswordConfirm" placeholder="Confirm password" required>
+        <span (click)="togglePasswordVisibilityConfirm()" class="fa {{eyeIconConfirm}}"></span>
+      </div>
+
+      <button
+        (click)="onSubmit()"
+        type="submit"
+        class="btn-primary">
+        Register
+      </button>
+
+      <div class="forgot-password-text">
+        <span class="forgot-password-text">Already have an account? </span><a href="/login">Login</a>
+      </div>
+
+      <!-- <div class="login-social-divider">
+        <span class="divider-line"></span><p> or connect with </p><span class="divider-line"></span>
+      </div>
+
+      <div class="social-icons">
+        <span class="fa fa-facebook social-icon"></span>
+        <span class="fa fa-google social-icon"></span>
+        <span class="fa fa-github social-icon"></span>
+      </div> -->
+    </form>
+  </div>
+</div>
