@@ -32,7 +32,7 @@ const routes: Routes = [
           {path: 'dashboard', component: DashboardComponent, canActivate: [authGuard]},
           {path: 'login', component: LoginComponent},
           // {path: 'register', component: RegisterComponent},
-          {path: 'passwordreset', component: PasswordResetComponent},
+          {path: 'password-reset', component: PasswordResetComponent},
         ]
       },
     ]
