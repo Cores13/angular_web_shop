@@ -5,7 +5,7 @@ import { AppState } from "../app.state";
 import { addItem, loadCart, loadCartFailure, loadCartSuccess, removeItem } from "./cart.actions";
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { CartService } from "src/app/services/cart.service";
+import { CartService } from "src/app/services/cart/cart.service";
 import { selectCart } from "./cart.selectors";
 
 @Injectable()

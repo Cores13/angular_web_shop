@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ResetPassword } from '../models/reset-password.model';
+import { ResetPassword } from '../../../models/reset-password.model';
+import { config } from 'src/app/config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PasswordResetService {
-  private baseUrl: string = 'https://localhost:7182/api/Auth';
+  private baseUrl: string = config.API_BASE_URL + 'Auth';
 
   constructor(private http: HttpClient) { }
 

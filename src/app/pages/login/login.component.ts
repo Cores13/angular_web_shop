@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
-import { PasswordResetService } from 'src/app/services/password-reset.service';
-import { UserService } from 'src/app/services/user.service';
+import { AuthService } from 'src/app/services/api/auth/auth.service';
+import { PasswordResetService } from 'src/app/services/api/password-reset/password-reset.service';
+import { UserService } from 'src/app/services/api/user/user.service';
 
 @Component({
   selector: 'app-login',

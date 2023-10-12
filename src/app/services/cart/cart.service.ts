@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
-import { Cart } from '../interfaces/store/cart';
+import { Cart } from '../../interfaces/store/cart';
 
 
 @Injectable({

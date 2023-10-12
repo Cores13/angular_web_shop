@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConfirmPasswordValidator } from 'src/app/helpers/confirm-passowrd.validator';
 import { ResetPassword } from 'src/app/models/reset-password.model';
-import { PasswordResetService } from 'src/app/services/password-reset.service';
+import { PasswordResetService } from 'src/app/services/api/password-reset/password-reset.service';
 
 @Component({
   selector: 'app-password-reset',
