@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ApiService } from 'src/app/services/api/api.service';
 import { AuthService } from 'src/app/services/api/auth/auth.service';
 import { UserService } from 'src/app/services/api/user/user.service';
 
@@ -13,10 +12,10 @@ export class DashboardComponent {
   public fullName: string = "";
   public role: string = "";
 
-  constructor(private api: ApiService, private authService: AuthService, private userService: UserService){}
+  constructor(private userService: UserService, private authService: AuthService){}
 
   ngOnInit() {
-    this.api.getUsers().subscribe(res => {
+    this.userService.getUsers().subscribe(res => {
       this.users = res;
     });
 
