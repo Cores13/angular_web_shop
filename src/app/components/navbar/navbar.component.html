@@ -10,11 +10,7 @@
     <a class="navbar-link" href="">{{'Navbar.Contact' | translate}}</a>
   </div>
   <div class="navbar-right">
-    <div class="navbar-search">
-      <span><img class="search-icon" src="assets/images/search.png" alt="Search icon"/></span>
-      <input class="search-input" type="text" placeholder="{{'Navbar.Search' | translate}}">
-    </div>
-    <a class="navbar-link" href="cart"><img class="navbar-icon" src="assets/images/cart.png" alt="Cart icon"/>{{numberOfItems}}</a>
+    <a class="navbar-link cart-icon" href="cart"><img class="navbar-icon" src="assets/images/cart.png" alt="Cart icon"/><span *ngIf="numberOfItems > 0" class="cart-size">{{numberOfItems}}</span></a>
     <select class="navbar-language-select" (change)="setLanguage($event.target)" name="language" title="language">
       <option class="navbar-language" value="en" selected>
         <img class="navbar-language-flag" src="assets/images/flags/en.png" alt="EN Flag"/>
@@ -25,5 +21,12 @@
         BA
       </option>
     </select>
+    <div class="navbar-search" [class.active]="active">
+      <span><img class="search-icon" src="assets/images/search.png" alt="Search icon"/></span>
+      <input class="search-input" type="text"
+      placeholder="{{'Navbar.Search' | translate}}"
+      (click)="setActive()"
+      (blur)="setInactive()">
+    </div>
   </div>
 </nav>

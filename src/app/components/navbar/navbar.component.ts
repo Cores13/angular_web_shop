@@ -12,6 +12,7 @@ import { loadCart, } from 'src/app/store/cart/cart.actions';
 export class NavbarComponent {
   @Output() languageChangeEvent: EventEmitter<any> = new EventEmitter();
   numberOfItems: number = 0;
+  active: boolean = false;
 
   constructor(private store: Store<AppState>){
      this.store.pipe(select(selectNumberOfItems)).subscribe((numberOfItems) => {this.numberOfItems = numberOfItems;})
@@ -19,6 +20,14 @@ export class NavbarComponent {
 
   ngOnInit ():void {
     this.store.dispatch(loadCart())
+  }
+
+  setActive(): void {
+    this.active = true;
+  }
+
+  setInactive(): void {
+    this.active = false;
   }
 
   setLanguage(language: any): void {

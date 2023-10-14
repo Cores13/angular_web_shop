@@ -4,15 +4,8 @@ import { Cart } from 'src/app/interfaces/store/cart';
 import { Status } from 'src/app/enums/status';
 
 export const initialState: Cart = {
-  items: [{
-    id: 0,
-    name: '',
-    description: '',
-    price: 0,
-    inStock: 0,
-    image: ''
-  }],
-  numberOfItems: 0,
+  items: [],
+  numberOfItems: 10,
   totalPrice: 0,
   error: null,
   status: Status.pending

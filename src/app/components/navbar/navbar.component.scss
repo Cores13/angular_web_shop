@@ -28,6 +28,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
+    width: 30%;
 
     .navbar-link {
       text-decoration: none;
@@ -44,14 +45,33 @@ nav {
     padding: 0 15px;
 
     .navbar-link {
+      position: relative;
       text-decoration: none;
       color: $primary_text_color;
       padding: 0 15px;
-
+      // min-width: 30px;
     }
     .navbar-icon {
       width: 20px;
       height: 20px;
+    }
+
+    .cart-size {
+      position: absolute;
+      display: flex;
+      top: -20px;
+      right: -5px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      padding: 1px;
+      color: white;
+      background-color: red;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 12px;
     }
 
     .navbar-search {
@@ -59,9 +79,11 @@ nav {
       flex-direction: row;
       align-items: center;
       justify-content: flex-start;
-      border: 1px solid lightgray;
+      border: none;
       padding: 5px;
       border-radius: 8px;
+      width: 10%;
+      transition: all 0.4s ease-out;
 
       .search-input {
         border: none;
@@ -69,9 +91,23 @@ nav {
         background: none;
         padding: 5px;
       }
+
+      .search-input::placeholder {
+        color: transparent;
+      }
+
       .search-icon {
         width: 15px;
         height: 15px;
+      }
+
+      &:hover, &.active {
+        width: 100%;
+        border: 1px solid lightgray;
+
+        .search-input::placeholder {
+          color: initial;
+        }
       }
     }
 
